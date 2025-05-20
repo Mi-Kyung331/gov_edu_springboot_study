@@ -85,6 +85,30 @@ public class  HttpStudyController3 {
         /api/study/students
         응답: {students: "성공", data: {Student 객체}}
      */
+
+
+    /*
+    엔드포인트를 통해 학생 목록을 페이징 + 검색해서 제공하는 기능
+        전체적인 구조
+        1. 학생(Student) 객체를 1000명 무작위로 생성 (dto에 학생 객체 생성)
+        2. 검색조건 (searchValue)가 있으면 필터링
+        3. 페이징 처리 (page, count)
+        4. 조건에 맞는 학생 리스트 postman에서 반환
+
+        결과
+        [프로토콜]://[호스트]:[포트]/[경로]?[쿼리스트링]
+        http://localhost:8081/api/study/students?page=1&count=30&searchValue=김
+
+        http - 프로토콜 = Http 프로토콜 사용
+        localhost - 호스트(서버주소) = 현재 내 컴퓨터 (로컬 서버)
+        8081 - 포트 번호 resources > application.properties > server.port=8081
+        /api/study/students - 경로
+        ?page=1&count=30&searchValue=김 - 요청에 필요한 조건
+
+        page=1 - 1페이지를 요청함
+        count=30 - 한 페이지에 최대 30명의 학생을 보여달라는 뜻
+        searchValue=김 - 이름에 "김"이라는 글자가 포함된 학생만 필터링
+     */
     @GetMapping("/study/students")
     public List<Student> students
     (SearchStudyDto searchStudyDto)
@@ -96,8 +120,6 @@ public class  HttpStudyController3 {
 //                new Student("박미경", 25),
 //                new Student("최미경", 25),
 //                new Student("허미경", 25)
-
-
 
 //        );
         List<Student> students = new ArrayList<>();
