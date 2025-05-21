@@ -1,15 +1,40 @@
 package com.korit.springboot.IoC;
 
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+/*
+    Component의 종류
+        1. @Component
+        : 특정 기능이 정해져있지 않은 객체(나머지 객체) filter, converter, exception
+        2. @Controller
+        : HTTP 요청 및 응답을 처리하는 객체
+        3. @Service
+        : 비즈니스 로직 또는 메인로직을 정의하고, 처리하는 객체
+        4. @Repository
+        : DB(=데이터베이스)와 관련된 로직을 정의하고, 처리하는 객체
+        5. @Configuration
+        : 설정 로직을 정의하고, 처리하는 객체.
+        : 직접생성 후 IoC 등록을 필요로 하는 Bean 설정
+ */
+
 @Component
+@AllArgsConstructor
 public class 스마트폰 {
 
-    private 배터리 b;
+/*
+    @Autowired
+    @Qualifier(value = "새로운배터리")
+    // 객체 생성 (배터리 객체에 무엇을 넣어야 할 지 모르기 때문에 @Qualifier(value = "삼성배터리") 써야함
+    // 삼성배터리가 들어와야한다는 의미
+ */
+    private 삼성배터리 b;
 
-    public 스마트폰(배터리 b) {
-        this.b = b;
-    }
+//    public 스마트폰(배터리 b) {
+//        this.b = b;
+//    }
 
     public void 전원켜기() {
         b.전류공급();
