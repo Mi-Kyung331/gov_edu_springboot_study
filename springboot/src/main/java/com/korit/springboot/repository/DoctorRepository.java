@@ -1,4 +1,4 @@
-package com.korit.springboot.mapper.repository;
+package com.korit.springboot.repository;
 
 
 import com.korit.springboot.controller.domain.entity.DoctorEntity;

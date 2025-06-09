@@ -2,7 +2,7 @@ package com.korit.springboot.controller.clinic;
 
 
 import com.korit.springboot.controller.domain.dto.DoctorRegisterDto;
-import com.korit.springboot.mapper.service.DoctorService;
+import com.korit.springboot.service.DoctorService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,25 +1,21 @@
-package com.korit.springboot.mapper.repository;
-
+package com.korit.springboot.controller.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "department_tb")
-public class DepartmentEntity {
-
+@Table(name = "student_tb")
+public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "department_id")
+    @Column(name = "student_id")
     private Integer id;
-    private String departmentName;
-
-
+    private String name;
+    private Integer age;
+    private String address;
 }

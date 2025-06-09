@@ -1,4 +1,4 @@
-package com.korit.springboot.mapper.repository;
+package com.korit.springboot.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

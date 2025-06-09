@@ -5,14 +5,13 @@ import lombok.Data;
 
 @Data
 public class DoctorRegisterDto {
-
     private String doctorName;
     private String departmentName;
 
-    public DoctorEntity toEntity() {
+    public DoctorEntity toEntity(Integer departmentId) {
         return DoctorEntity.builder()
                 .doctorName(doctorName)
+                .departmentId(departmentId)
                 .build();
     }
-
 }
